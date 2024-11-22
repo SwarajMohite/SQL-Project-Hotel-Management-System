@@ -2,13 +2,14 @@
 
 ## Overview
 
-The Hotel Management System is a comprehensive solution for managing hotel operations, including menu management, employee records, and customer feedback. This project utilizes an SQL database to store and manage data efficiently.
+The Hotel Management System is a comprehensive solution for managing hotel operations, including menu management, employee records, customer feedback, and order management. This project utilizes an SQL database to store and manage data efficiently.
 
 ## Features
 
 - **Menu Management**: Includes starters, breakfast, lunch, dinner, and desserts.
 - **Employee Management**: Maintain records of hotel staff, including resumes and employment details.
 - **Customer Management**: Track customer visits, reviews, and favorite dishes.
+- **Order Management**: Manage customer orders with details on the ordered items and their costs.
 
 ## Database Structure
 
@@ -49,9 +50,17 @@ The Hotel Management System is a comprehensive solution for managing hotel opera
    - `review`: Customer's feedback.
    - `liked_dish`: Dish liked by the customer.
 
+8. **CustomerOrder**
+   - `customer_name`: Name of the customer who placed the order.
+   - `order_id`: Unique identifier for each order.
+   - `order_name`: Name of the ordered dish.
+   - `unit_price`: Price per unit of the dish.
+   - `quantity`: Number of units ordered.
+   - `total`: Total price for the order (calculated as `unit_price * quantity`).
+
 ### SQL Commands
 
-The project includes SQL commands for creating tables, inserting data, and managing sequences. Sample commands are provided for all tables, utilizing `INSERT ALL` for bulk data entry.
+The project includes SQL commands for creating tables, inserting data, and managing sequences. Sample commands are provided for all tables, utilizing `INSERT ALL` for bulk data entry and direct inserts for specific orders.
 
 ### Sample SQL Commands
 
@@ -64,12 +73,13 @@ CREATE TABLE Dinner(...);
 CREATE TABLE Dessert(...);
 CREATE TABLE Employee(...);
 CREATE TABLE Customer(...);
+CREATE TABLE CustomerOrder(...);
 
--- Inserting data (example for Breakfast)
-INSERT ALL 
-  INTO Breakfast(id, name, price, stars) VALUES (id.nextval, 'Masala Dosa', 100.00, '5')
-  ...
-SELECT * FROM dual;
+-- Inserting data (example for CustomerOrder)
+INSERT INTO CustomerOrder 
+(customer_name, order_id, order_name, unit_price, quantity, total) 
+VALUES 
+('Swaraj Mohite', 121, 'Gulab Jamun', 80.50, 2, 80.50 * 2);
 ```
 
 ## Getting Started
@@ -80,7 +90,7 @@ SELECT * FROM dual;
 
 ## Technologies Used
 
-- SQL Database ( Oracle )
+- SQL Database (Oracle)
   
 ##
 
