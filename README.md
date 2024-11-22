@@ -58,29 +58,7 @@ The Hotel Management System is a comprehensive solution for managing hotel opera
    - `quantity`: Number of units ordered.
    - `total`: Total price for the order (calculated as `unit_price * quantity`).
 
-### SQL Commands
 
-The project includes SQL commands for creating tables, inserting data, and managing sequences. Sample commands are provided for all tables, utilizing `INSERT ALL` for bulk data entry and direct inserts for specific orders.
-
-### Sample SQL Commands
-
-```sql
--- Creating tables
-CREATE TABLE Starter(...);
-CREATE TABLE Breakfast(...);
-CREATE TABLE Lunch(...);
-CREATE TABLE Dinner(...);
-CREATE TABLE Dessert(...);
-CREATE TABLE Employee(...);
-CREATE TABLE Customer(...);
-CREATE TABLE CustomerOrder(...);
-
--- Inserting data (example for CustomerOrder)
-INSERT INTO CustomerOrder 
-(customer_name, order_id, order_name, unit_price, quantity, total) 
-VALUES 
-('Swaraj Mohite', 121, 'Gulab Jamun', 80.50, 2, 80.50 * 2);
-```
 
 ## Getting Started
 
